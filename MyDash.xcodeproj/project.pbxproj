@@ -19,6 +19,7 @@
 		1831D9502D947767007D827F /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1831D94F2D94775D007D827F /* AuthViewModel.swift */; };
 		183850152D6CEA3D00821939 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183850142D6CEA3D00821939 /* ProfileView.swift */; };
 		183850172D6D073500821939 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183850162D6D073500821939 /* User.swift */; };
+		18443FF72EC0D5B900FC23AD /* ProfileOrLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18443FF62EC0D5B900FC23AD /* ProfileOrLoginView.swift */; };
 		1851A1482D6B9F5E00BEE10E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1851A1472D6B9F5E00BEE10E /* LoginView.swift */; };
 		1851A14A2D6BA93200BEE10E /* InputVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1851A1492D6BA93200BEE10E /* InputVIew.swift */; };
 		1851A14E2D6BB7E200BEE10E /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1851A14D2D6BB7E200BEE10E /* RegistrationView.swift */; };
@@ -72,6 +73,7 @@
 		1831D94F2D94775D007D827F /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		183850142D6CEA3D00821939 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		183850162D6D073500821939 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		18443FF62EC0D5B900FC23AD /* ProfileOrLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOrLoginView.swift; sourceTree = "<group>"; };
 		1851A1472D6B9F5E00BEE10E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		1851A1492D6BA93200BEE10E /* InputVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputVIew.swift; sourceTree = "<group>"; };
 		1851A14D2D6BB7E200BEE10E /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
@@ -96,6 +98,14 @@
 		18B833A42DA6F6E1009458D8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18C20E882DA6E073009CB552 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		188763C02EC3BCE000A8A22C /* Views */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		18940A722D39589E009C6717 /* Frameworks */ = {
@@ -179,6 +189,7 @@
 				1851A1472D6B9F5E00BEE10E /* LoginView.swift */,
 				1851A14D2D6BB7E200BEE10E /* RegistrationView.swift */,
 				183850142D6CEA3D00821939 /* ProfileView.swift */,
+				18443FF62EC0D5B900FC23AD /* ProfileOrLoginView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -236,6 +247,14 @@
 			path = News;
 			sourceTree = "<group>";
 		};
+		188763BE2EC3BCB100A8A22C /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				188763C02EC3BCE000A8A22C /* Views */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
 		18940A6C2D39589E009C6717 = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +274,7 @@
 		18940A772D39589E009C6717 /* MyDash */ = {
 			isa = PBXGroup;
 			children = (
+				188763BE2EC3BCB100A8A22C /* Notes */,
 				1831D9462D9473B7007D827F /* GoogleService-Info.plist */,
 				18B8339D2DA6EAF3009458D8 /* App */,
 				18299F922D3C6F750077F6C2 /* Info.plist */,
@@ -314,6 +334,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				188763C02EC3BCE000A8A22C /* Views */,
 			);
 			name = MyDash;
 			productName = MyDash;
@@ -403,6 +426,7 @@
 				186297D52D99C4E400B8166E /* DocumentUploadViewModel.swift in Sources */,
 				18940A8C2D398F74009C6717 /* TabItemView.swift in Sources */,
 				186E03CA2D3ACE2A00725CAA /* NewsPageView.swift in Sources */,
+				18443FF72EC0D5B900FC23AD /* ProfileOrLoginView.swift in Sources */,
 				18940A792D39589E009C6717 /* MyDashApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -538,7 +562,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MyDash/Preview Content\"";
-				DEVELOPMENT_TEAM = JV4HN368L5;
+				DEVELOPMENT_TEAM = 3G7373LSKP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyDash/Info.plist;
@@ -572,7 +596,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MyDash/Preview Content\"";
-				DEVELOPMENT_TEAM = JV4HN368L5;
+				DEVELOPMENT_TEAM = 3G7373LSKP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyDash/Info.plist;

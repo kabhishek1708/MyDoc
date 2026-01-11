@@ -10,6 +10,7 @@ import SwiftUI
 struct ImagePreviewView: View {
     @ObservedObject var viewModel: DocumentUploadViewModel
     @EnvironmentObject var loginViewModel: AuthViewModel
+    @State private var hasLoaded = false
     
     var body: some View {
         VStack {
@@ -39,6 +40,8 @@ struct ImagePreviewView: View {
             .padding()
         }
         .onAppear {
+            guard !hasLoaded else { return }
+            hasLoaded = true
             Task {
                 do {
                     viewModel.images = try await viewModel.getImages(userID: loginViewModel.currentUser?.id)
@@ -47,6 +50,5 @@ struct ImagePreviewView: View {
                 }
             }
         }
-        
     }
 }

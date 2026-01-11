@@ -11,30 +11,23 @@ struct TabBarView: View {
     
     @State private var selectedTab = TabsData.about.rawValue
     @EnvironmentObject var appState: AppState
-    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         VStack(spacing: 0) {
             TabView (selection: $selectedTab) {
-                Group {
-                    if viewModel.userSession != nil {
-                        ProfileView()
-                    } else {
-                        LoginView()
-                    }
-                }
+                ProfileOrLoginView()
                     .tag(TabsData.about.rawValue)
                 DocumentView()
                     .tag(TabsData.document.rawValue)
                 NewsPageView(viewModel: NewsPageVIewModel())
                     .tag(TabsData.news.rawValue)
-                Text("Anime")
-                    .tag(TabsData.anime.rawValue)
+                NotesGridView()
+                    .tag(TabsData.notes.rawValue)
                 Text("Stock")
                     .tag(TabsData.stocks.rawValue)
             }
             .padding(.bottom, -50)
-            HStack() {
+            HStack(spacing: 0) {
                 ForEach(TabsData.allCases, id: \.rawValue) { tabData in
                     TabItemView(tabData: tabData, tab: tabData.index, selectedTab: $selectedTab)
                 }

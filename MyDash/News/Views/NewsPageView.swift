@@ -24,9 +24,7 @@ struct NewsPageView: View {
                     }
                 switch viewModel.state {
                 case .isloading:
-                    Spacer()
-                    ProgressView()
-                    Spacer()
+                    LottieView(animationname: "loading")
                         .task {
                             await viewModel.fetchNewsArticles(category: selectedCategory, language: "en")
                             

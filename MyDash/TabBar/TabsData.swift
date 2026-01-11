@@ -8,7 +8,7 @@
 import Foundation
 
 enum TabsData: Int, CaseIterable {
-    case about = 0, document, news, anime, stocks
+    case about = 0, document, news, notes, stocks
     
     var tabImage: String {
         switch self {
@@ -18,7 +18,7 @@ enum TabsData: Int, CaseIterable {
             return "doc.text"
         case .news:
             return "newspaper.fill"
-        case .anime:
+        case .notes:
             return "leaf"
         case .stocks:
             return "chart.line.uptrend.xyaxis"
@@ -33,8 +33,8 @@ enum TabsData: Int, CaseIterable {
             return "Document"
         case .news:
             return "News"
-        case .anime:
-            return "Anime"
+        case .notes:
+            return "Notes"
         case .stocks:
             return "Stocks"
         }

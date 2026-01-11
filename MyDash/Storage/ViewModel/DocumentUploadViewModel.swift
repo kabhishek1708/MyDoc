@@ -13,7 +13,6 @@ class DocumentUploadViewModel: ObservableObject {
     private let storage = AppwriteManager.shared.storage
     @Published var uploadedImageURL: URL? = nil
     private let bucketID = "67eae0f20013797e69fb"
-    @EnvironmentObject var viewModel: AuthViewModel
     @Published var images: [UIImage] = []
     /// Store fetched image IDs to avoid refetching
     private var fetchedImageIDs: Set<String> = []
@@ -69,7 +68,7 @@ class DocumentUploadViewModel: ObservableObject {
             
             for file in filteredFileList {
                 print("print \(file.id)")
-                if let byteBuffer = try? await storage.getFilePreview(bucketId: bucketID, fileId: file.id) {
+                if let byteBuffer = try? await storage.getFileDownload(bucketId: bucketID, fileId: file.id) {
                     let imageData = Data(byteBuffer.readableBytesView)
                     
                     // Add only new image and its ID
