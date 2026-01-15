@@ -21,7 +21,7 @@ struct TabBarView: View {
                     .tag(TabsData.document.rawValue)
                 NewsPageView(viewModel: NewsPageVIewModel())
                     .tag(TabsData.news.rawValue)
-                NotesGridView()
+                NotesGridView(viewModel: NotesViewModel())
                     .tag(TabsData.notes.rawValue)
                 Text("Stock")
                     .tag(TabsData.stocks.rawValue)

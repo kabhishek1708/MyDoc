@@ -20,6 +20,7 @@
 		183850152D6CEA3D00821939 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183850142D6CEA3D00821939 /* ProfileView.swift */; };
 		183850172D6D073500821939 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183850162D6D073500821939 /* User.swift */; };
 		18443FF72EC0D5B900FC23AD /* ProfileOrLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18443FF62EC0D5B900FC23AD /* ProfileOrLoginView.swift */; };
+		185031052F1571FF0034159B /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185031042F1571FF0034159B /* NotesViewModel.swift */; };
 		1851A1482D6B9F5E00BEE10E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1851A1472D6B9F5E00BEE10E /* LoginView.swift */; };
 		1851A14A2D6BA93200BEE10E /* InputVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1851A1492D6BA93200BEE10E /* InputVIew.swift */; };
 		1851A14E2D6BB7E200BEE10E /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1851A14D2D6BB7E200BEE10E /* RegistrationView.swift */; };
@@ -74,6 +75,7 @@
 		183850142D6CEA3D00821939 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		183850162D6D073500821939 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		18443FF62EC0D5B900FC23AD /* ProfileOrLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOrLoginView.swift; sourceTree = "<group>"; };
+		185031042F1571FF0034159B /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
 		1851A1472D6B9F5E00BEE10E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		1851A1492D6BA93200BEE10E /* InputVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputVIew.swift; sourceTree = "<group>"; };
 		1851A14D2D6BB7E200BEE10E /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
@@ -100,6 +102,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		185030F92F154B390034159B /* CoreDataSupportFiles */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = CoreDataSupportFiles;
+			sourceTree = "<group>";
+		};
+		185030FD2F15518A0034159B /* Repository */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		188763C02EC3BCE000A8A22C /* Views */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Views;
@@ -170,6 +182,14 @@
 				1851A1492D6BA93200BEE10E /* InputVIew.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		185031032F1571DD0034159B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				185031042F1571FF0034159B /* NotesViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		1851A1422D6B9EFC00BEE10E /* Authentication */ = {
@@ -247,12 +267,15 @@
 			path = News;
 			sourceTree = "<group>";
 		};
-		188763BE2EC3BCB100A8A22C /* Notes */ = {
+		188763BE2EC3BCB100A8A22C /* NotesVIew */ = {
 			isa = PBXGroup;
 			children = (
+				185031032F1571DD0034159B /* ViewModel */,
+				185030FD2F15518A0034159B /* Repository */,
+				185030F92F154B390034159B /* CoreDataSupportFiles */,
 				188763C02EC3BCE000A8A22C /* Views */,
 			);
-			path = Notes;
+			path = NotesVIew;
 			sourceTree = "<group>";
 		};
 		18940A6C2D39589E009C6717 = {
@@ -274,7 +297,7 @@
 		18940A772D39589E009C6717 /* MyDash */ = {
 			isa = PBXGroup;
 			children = (
-				188763BE2EC3BCB100A8A22C /* Notes */,
+				188763BE2EC3BCB100A8A22C /* NotesVIew */,
 				1831D9462D9473B7007D827F /* GoogleService-Info.plist */,
 				18B8339D2DA6EAF3009458D8 /* App */,
 				18299F922D3C6F750077F6C2 /* Info.plist */,
@@ -336,6 +359,8 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				185030F92F154B390034159B /* CoreDataSupportFiles */,
+				185030FD2F15518A0034159B /* Repository */,
 				188763C02EC3BCE000A8A22C /* Views */,
 			);
 			name = MyDash;
@@ -417,6 +442,7 @@
 				186E03CE2D3B056400725CAA /* NewsPageVIewModel.swift in Sources */,
 				183850152D6CEA3D00821939 /* ProfileView.swift in Sources */,
 				1851A1482D6B9F5E00BEE10E /* LoginView.swift in Sources */,
+				185031052F1571FF0034159B /* NotesViewModel.swift in Sources */,
 				186297DB2D99C61100B8166E /* AppwriteManager.swift in Sources */,
 				186297D32D99C4AC00B8166E /* DocumentView.swift in Sources */,
 				18299F992D3C7AE80077F6C2 /* CategoryListView.swift in Sources */,

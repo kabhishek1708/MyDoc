@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct NoteItemView: View {
+    var note: Note
     var body: some View {
         VStack {
             HStack {
-                Text("Notes Title")
+                Text(note.title ?? "")
                     .font(.headline)
                 Spacer()
                 Image(systemName: "note.text")
@@ -19,7 +20,7 @@ struct NoteItemView: View {
             
             Spacer()
             
-            Text("Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem!")
+            Text(note.desc ?? "")
                 .multilineTextAlignment(.leading)
                 .lineLimit(1)
         }
@@ -31,8 +32,4 @@ struct NoteItemView: View {
                 .shadow(color: .black.opacity(0.15), radius: 6, x: 0, y: 3)
         )
     }
-}
-
-#Preview {
-    NoteItemView()
 }

@@ -12,6 +12,7 @@ import Firebase
 struct MyDashApp: App {
     @StateObject var appState = AppState()
     @StateObject var authViewModel = AuthViewModel()
+    let persistenceController = PersistenceController.shared
     
     init() {
         FirebaseApp.configure()
@@ -23,7 +24,10 @@ struct MyDashApp: App {
                 .environmentObject(appState)
                 .environmentObject(authViewModel)
                 .background(Color.gray.opacity(0.01))
-            
+                .environment(
+                    \.managedObjectContext,
+                     persistenceController.container.viewContext
+                )
         }
     }
 }
