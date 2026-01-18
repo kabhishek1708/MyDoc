@@ -6,16 +6,33 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct NotesEditorView: View {
-    @State private var title: String = ""
-    @State private var description: String = ""
+    @State var title: String = ""
+    @State var description: String = ""
     
-    @Environment(\.dismiss) private var dismiss
-    @Environment(\.managedObjectContext) private var context
-    
+    @Environment(\.dismiss) private var dismiss    
     @ObservedObject var viewModel: NotesViewModel
     
+    private var note: Note?
+    private var editing: Bool = false
+    
+    init(editing: Bool,viewModel: NotesViewModel) {
+        self.editing = editing
+        self.viewModel = viewModel
+    }
+    
+    init(note: Note,
+         editing: Bool,
+         viewModel: NotesViewModel) {
+        self.note = note
+        self.viewModel = viewModel
+        self.editing = editing
+        _title = State(initialValue: note.title ?? "")
+        _description = State(initialValue: note.desc ?? "")
+    }
+
     var body: some View {
         VStack(spacing: 16) {
             
@@ -48,8 +65,13 @@ struct NotesEditorView: View {
             
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
-                    saveNote()
-                    dismiss()
+                    if editing {
+                        viewModel.update(note: note ?? Note(), title: title, description: description)
+                        dismiss()
+                    } else {
+                        saveNote()
+                        dismiss()
+                    }
                 } label: {
                     Text("Save")
                         .foregroundColor(.black)

@@ -12,14 +12,21 @@ final class NotesViewModel: ObservableObject {
     
     private let repository: NotesRepository
     
-    init(
-        context: NSManagedObjectContext =
-        PersistenceController.shared.container.viewContext
-    ) {
+    var context: NSManagedObjectContext = PersistenceController.shared.container.viewContext
+    
+    init() {
         self.repository = NotesDataRepository(context: context)
     }
     
     func saveNote(title: String, description: String) {
         repository.create(title: title, description: description)
+    }
+    
+    func update(note: Note, title: String, description: String) {
+        repository.update(note: note, title: title, description: description)
+    }
+    
+    func deleteNote(note: Note){
+        repository.delete(record: note)
     }
 }

@@ -10,8 +10,7 @@ import SwiftUI
 
 protocol NotesRepository {
     func create(title: String, description: String)
-    func getAll() -> [Note]?
-    func update(note: Note)
+    func update(note: Note, title: String, description: String)
     func delete(record: Note)
 }
 
@@ -29,17 +28,16 @@ struct NotesDataRepository: NotesRepository {
         saveContext()
     }
     
-    func getAll() -> [Note]? {
-        let result = fetchManagedObjects(managedObject: Note.self)
-        return result
+    func update(note: Note, title: String, description: String) {
+        note.title = title
+        note.desc = description
+
+        saveContext()
     }
-    
-    func update(note: Note) {
-        //
-    }
+
     
     func delete(record: Note) {
-        //
+        context.delete(record)
     }
     
     private func saveContext() {
@@ -50,18 +48,5 @@ struct NotesDataRepository: NotesRepository {
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
-    }
-    
-    func fetchManagedObjects<T: NSManagedObject>(managedObject: T.Type) -> [T]? {
-        do {
-            guard let result = try context.fetch(managedObject.fetchRequest()) as? [T] else {
-                return nil
-            }
-            return result
-        } catch let error{
-            debugPrint(error)
-        }
-        
-        return nil
     }
 }

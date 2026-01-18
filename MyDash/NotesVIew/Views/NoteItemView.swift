@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct NoteItemView: View {
-    var note: Note
+    
+    @ObservedObject var note: Note
+    
     var body: some View {
         VStack {
             HStack {

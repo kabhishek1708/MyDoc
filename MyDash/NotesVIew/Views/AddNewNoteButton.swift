@@ -27,7 +27,7 @@ struct AddNewNoteButton: View {
                 .shadow(color: .black.opacity(0.2), radius: 15, x: 0, y: 16)
         }
         .navigationDestination(isPresented: $showNotesEditor) {
-            NotesEditorView(viewModel:viewModel)
+            NotesEditorView(editing: false, viewModel:viewModel)
         }
     }
 }

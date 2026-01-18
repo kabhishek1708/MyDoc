@@ -1,13 +1,15 @@
 //
-//  Notes+CoreDataClass.swift
+//  Note+CoreDataClass.swift
 //  MyDash
 //
-//  Created by Abhishek on 12/01/26.
+//  Created by Abhishek on 18/01/26.
 //
 //
 
-import Foundation
-import CoreData
+public import Foundation
+public import CoreData
+
+public typealias NoteCoreDataClassSet = NSSet
 
 @objc(Note)
 public class Note: NSManagedObject {
